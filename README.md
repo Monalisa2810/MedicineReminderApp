@@ -3,11 +3,18 @@
 A comprehensive, cross-platform mobile application built with **React Native** and **Expo Router**. This application serves as a personal health assistant, helping users track their daily medications, log vital health signs, book doctor consultations, and instantly reach out to emergency contacts.
 
 ### 📥 Download the App
-**[Download the latest Android APK here](https://expo.dev/accounts/lizcreates/projects/medicine-reminder-app/builds/e3833eef-a938-417d-a2a2-84b16500689f)**
+**[Download the latest Android APK here](https://expo.dev/accounts/lizcreates/projects/medicine-reminder-app/builds/9d648ab2-f352-4d38-aecf-02e97392a8d1)**
 
 ---
 
 ## 🌟 Key Features
+
+### 🚀 Recent Updates
+* **Custom Branding:** Added custom app icon and splash screen.
+* **Robust Notifications:** Configured exact alarm permissions for Android (`SCHEDULE_EXACT_ALARM`, `USE_EXACT_ALARM`) to ensure precise delivery of medication reminders.
+* **EAS Configuration:** Successfully set up `eas.json` for streamlined cloud APK builds.
+
+
 
 * **Medication Scheduling & Tracking**: Easily add medicines with specific dosages and schedules. Mark them as taken and maintain an adherence streak.
 * **Native Push Notifications**: Never miss a dose! The app triggers true native push notifications directly to the user's lock screen (when built as an APK or IPA).

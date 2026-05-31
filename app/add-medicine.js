@@ -115,7 +115,7 @@ export default function AddMedicineScreen() {
       router.back();
     } catch (e) {
       console.error(e);
-      Alert.alert("Error", "Failed to save medicine");
+      Alert.alert("Error", e.message || "Failed to save medicine");
     }
   };
 

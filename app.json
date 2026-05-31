@@ -6,23 +6,40 @@
     "orientation": "portrait",
     "scheme": "medicinereminderapp",
     "userInterfaceStyle": "automatic",
-
+    "icon": "./assets/images/icon.png",
     "android": {
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.lizcreates.medicinereminderapp",
+      "permissions": [
+        "SCHEDULE_EXACT_ALARM",
+        "USE_EXACT_ALARM"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundColor": "#ffffff"
+      }
     },
-
     "web": {
+      "favicon": "./assets/images/favicon.png",
       "output": "single"
     },
-
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF"
+          "backgroundColor": "#208AEF",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200
         }
-      ]
-    ]
+      ],
+      "expo-notifications"
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "9ab587da-0911-42b6-ba23-560de518fa41"
+      }
+    }
   }
 }

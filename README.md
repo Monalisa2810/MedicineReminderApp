@@ -1,56 +1,78 @@
-# Welcome to your Expo app 👋
+# 💊 Medicine Reminder & Health Assistant
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A comprehensive, cross-platform mobile application built with **React Native** and **Expo Router**. This application serves as a personal health assistant, helping users track their daily medications, log vital health signs, book doctor consultations, and instantly reach out to emergency contacts.
 
-## Get started
+### 📥 Download the App
+**[Download the latest Android APK here](https://expo.dev/accounts/lizcreates/projects/medicine-reminder-app/builds/e3833eef-a938-417d-a2a2-84b16500689f)**
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🌟 Key Features
 
-2. Start the app
+* **Medication Scheduling & Tracking**: Easily add medicines with specific dosages and schedules. Mark them as taken and maintain an adherence streak.
+* **Native Push Notifications**: Never miss a dose! The app triggers true native push notifications directly to the user's lock screen (when built as an APK or IPA).
+* **Pill Refill Alerts**: The app automatically tracks remaining pills and sends a low-inventory warning notification when it's time to get a refill.
+* **Health Log & Vitals**: Track blood pressure, blood sugar levels, and weight over time.
+* **Health Report Generation**: Instantly generate a summary report of medication adherence and recent vitals that can be saved as a PDF or printed for medical visits.
+* **Emergency SOS**: Quick-access red SOS button that dials 911 and allows saving up to 3 personal emergency contacts.
+* **Doctor Consultations**: A built-in mock interface to browse available specialists and book upcoming appointments.
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🛠️ Technology Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+* **Framework**: React Native with [Expo SDK 56](https://expo.dev/)
+* **Routing**: Expo Router (File-based routing)
+* **Local Storage**: AsyncStorage (`@react-native-async-storage/async-storage`)
+* **Animations**: React Native Animated API & SVG Progress Rings
+* **Build System**: Expo Application Services (EAS)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 🚀 Getting Started Locally
 
-When you're ready, run:
-
+### 1. Install Dependencies
+Make sure you have Node.js installed, then run:
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Start the Development Server
+```bash
+npx expo start
+```
+* **Web**: Press `w` to open the app in your web browser. *(Note: True background push notifications are disabled on the web version, but a foreground alert system will trigger for testing purposes).*
+* **Mobile**: Download the **Expo Go** app on iOS/Android and scan the QR code to test the app on your physical device.
 
-### Other setup steps
+---
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## 📦 Building for Production
 
-## Learn more
+To unlock the full potential of background push notifications and the native dialer, you should build the app into a native Android `.apk` file using Expo Application Services (EAS).
 
-To learn more about developing your project with Expo, look at the following resources:
+### Build an Android APK
+1. Install the EAS Command Line tool globally:
+   ```bash
+   npm install -g eas-cli
+   ```
+2. Log into your Expo account:
+   ```bash
+   eas login
+   ```
+3. Trigger the cloud build process:
+   ```bash
+   eas build -p android --profile preview
+   ```
+4. Once the build finishes (usually 5-10 minutes), EAS will provide a direct link and QR code to download the `.apk` file to your Android phone.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 🌐 Deploying to the Web (Render, Vercel, Netlify)
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+If you wish to host the app as a website (Single Page Application):
+1. Run the web export command:
+   ```bash
+   npm install && npx expo export -p web
+   ```
+2. Set your hosting provider to serve the generated `dist` folder.
+3. **Critical**: Ensure you configure a URL Rewrite Rule on your host to redirect all routes (`/*`) to `/index.html` since Expo Router handles navigation on the client-side.
